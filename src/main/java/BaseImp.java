@@ -12,26 +12,11 @@ public class BaseImp implements Base {
 
     @Override
     public Properties loadLoginProperties() throws IOException {
-        Properties properties = new Properties();
-        FileInputStream fileInputStream = new FileInputStream(
-                System.getProperty("user.dir") + "/src/test/resources/properties/login.properties");
-        properties.load(fileInputStream);
-        return properties;
+        return null;
     }
 
     @Override
     public WebDriver getDriver(String webDriver) {
-        if (webDriver.equals("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            return new ChromeDriver();
-        }
-        else if (webDriver.equals("edge")){
-            WebDriverManager.edgedriver().setup();
-            return new EdgeDriver();
-        }
-        else {
-            System.out.println("Select driver");
-            return null;
-        }
+        return null;
     }
 }
