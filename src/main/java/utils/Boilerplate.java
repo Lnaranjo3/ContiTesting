@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class Boilerplate {
 
-    public static void generateTestingBoilerplate(String homeDirectoryPath){
+    public static void generateBoilerplate(String homeDirectoryPath){
 
         new File( homeDirectoryPath + "\\src\\test\\java\\testCases").mkdir();
         new File( homeDirectoryPath + "\\src\\test\\java\\pageObject").mkdir();
@@ -50,7 +50,7 @@ public class Boilerplate {
         }
     }
 
-    public static void resetTestingBoilerplate(String homeDirectoryPath) throws IOException {
+    public static void resetBoilerplate(String homeDirectoryPath) throws IOException {
         FileUtils.deleteDirectory(
                 new File(homeDirectoryPath + "\\src\\test\\java\\testCases"));
         FileUtils.deleteDirectory(
