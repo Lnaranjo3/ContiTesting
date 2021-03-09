@@ -1,23 +1,22 @@
 package utils;
 
+import org.apache.commons.io.FileUtils;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
-public class GenerateTestingBoilerplate {
+public class Boilerplate {
 
-    public static void generateTestingBoilerplate(){
+    public static void generateTestingBoilerplate(String homeDirectoryPath){
 
-        String homeDirectory = "D:\\SCHOOL\\ContiTesting";
-        new File( homeDirectory + "\\src\\test\\java\\testCases").mkdir();
-        new File( homeDirectory + "\\src\\test\\java\\pageObject").mkdir();
-        new File( homeDirectory + "\\src\\test\\resources\\testSuites").mkdir();
+        new File( homeDirectoryPath + "\\src\\test\\java\\testCases").mkdir();
+        new File( homeDirectoryPath + "\\src\\test\\java\\pageObject").mkdir();
+        new File( homeDirectoryPath + "\\src\\test\\resources\\testSuites").mkdir();
 
         try {
-            File myObj = new File(homeDirectory + "\\src\\test\\resources\\testSuites\\testSuite.xml");
+            File myObj = new File(homeDirectoryPath +
+                    "\\src\\test\\resources\\testSuites\\testSuite.xml");
             if (myObj.createNewFile()) {
                 System.out.println("File created: " + myObj.getName());
             } else {
@@ -29,7 +28,7 @@ public class GenerateTestingBoilerplate {
         }
 
         try {
-            FileWriter myWriter = new FileWriter(homeDirectory + "\\src\\test\\resources\\testSuites\\testSuite.xml");
+            FileWriter myWriter = new FileWriter(homeDirectoryPath + "\\src\\test\\resources\\testSuites\\testSuite.xml");
             myWriter.write("" +
                     "<!DOCTYPE suite SYSTEM \"https://testng.org/testng-1.0.dtd\" >\n" +
                     "<suite name = \"Automation testing with selenium\" verbose = \"1\" >\n" +
@@ -38,7 +37,7 @@ public class GenerateTestingBoilerplate {
                     "    <test name = \"Login Test\" >\n" +
                     "        <parameter name=\"browser\" value=\"chrome\"/>\n" +
                     "        <classes>\n" +
-                    "            <class name = \"testDemo.Login\" />\n" +
+                    "            <class name = \"example.className\" />\n" +
                     "        </classes>\n" +
                     "    </test>\n" +
                     "</suite>" +
@@ -49,5 +48,14 @@ public class GenerateTestingBoilerplate {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+    }
+
+    public static void resetTestingBoilerplate(String homeDirectoryPath) throws IOException {
+        FileUtils.deleteDirectory(
+                new File(homeDirectoryPath + "\\src\\test\\java\\testCases"));
+        FileUtils.deleteDirectory(
+                new File(homeDirectoryPath + "\\src\\test\\java\\pageObject"));
+        FileUtils.deleteDirectory(
+                new File(homeDirectoryPath + "\\src\\test\\resources\\testSuites"));
     }
 }

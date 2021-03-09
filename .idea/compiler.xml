@@ -10,5 +10,8 @@
         <module name="ContiTesting" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ContiTesting" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

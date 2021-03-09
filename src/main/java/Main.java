@@ -1,9 +1,11 @@
-import utils.GenerateTestingBoilerplate;
+import utils.Boilerplate;
+
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        GenerateTestingBoilerplate.generateTestingBoilerplate();
-
+        //Boilerplate.generateTestingBoilerplate("D:\\SCHOOL\\ContiTesting");
+        Boilerplate.resetTestingBoilerplate("D:\\SCHOOL\\ContiTesting");
     }
 }
