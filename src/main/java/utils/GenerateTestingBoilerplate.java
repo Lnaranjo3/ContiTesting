@@ -7,9 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class GenerateBoilerplate {
+public class GenerateTestingBoilerplate {
 
-    public static void generateBoilerplate(){
+    public static void generateTestingBoilerplate(){
 
         String homeDirectory = "D:\\SCHOOL\\ContiTesting";
         new File( homeDirectory + "\\src\\test\\java\\testCases").mkdir();
