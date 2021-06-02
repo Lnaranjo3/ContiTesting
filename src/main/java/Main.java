@@ -7,5 +7,6 @@ public class Main {
 
         //Boilerplate.generateBoilerplate("D:\\SCHOOL\\ContiTesting");
         Boilerplate.resetBoilerplate("D:\\SCHOOL\\ContiTesting");
+        System.out.printf("Commiting additiona branch");
     }
 }
